@@ -11,7 +11,7 @@ export const create = ({ title }) => {
 
 export const update = (category) => {
   return {
-    type: 'CATEGORY_CREATE',
+    type: 'CATEGORY_UPDATE',
     payload: category,
   };
 };

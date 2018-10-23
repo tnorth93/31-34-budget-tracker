@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as categpryActions from '../action/category-actions';
+import * as categoryActions from '../../action/category-actions';
 import CategoryForm from '../category-form/category-form';
 
 class Dashboard extends React.Component {
