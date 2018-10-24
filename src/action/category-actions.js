@@ -1,9 +1,10 @@
-export const create = ({ title }) => {
+export const create = ({ title, budget }) => {
   return {
     type: 'CATEGORY_CREATE',
     payload: {
       id: Math.random(),
       title,
+      budget,
       createdOn: new Date(),
     },
   };

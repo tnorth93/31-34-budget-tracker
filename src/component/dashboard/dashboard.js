@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
       <div>
         <CategoryForm onComplete={this.props.categoryCreate}/>
         <p> { this.props.categories.map(currentCategory =>
-          <p key={currentCategory.id}>{currentCategory.title}<button name='booty'>booter</button></p>)}</p>
+          <p key={currentCategory.id}>{currentCategory.title} - $$$ {currentCategory.budget}</p>)}</p>
       </div>
     );
   }
