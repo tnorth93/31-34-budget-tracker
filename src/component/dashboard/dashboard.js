@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
       <div>
         <CategoryForm onComplete={this.props.categoryCreate}/>
         <p> { this.props.categories.map(currentCategory =>
-          <p key={currentCategory.id}>{currentCategory.title}</p>)}</p>
+          <p key={currentCategory.id}>{currentCategory.title}<button name='booty'>booter</button></p>)}</p>
       </div>
     );
   }
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (category) => {
-      dispatch(categoryActions.create(category));
+      return dispatch(categoryActions.create(category));
     },
   };
 };

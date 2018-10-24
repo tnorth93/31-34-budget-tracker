@@ -18,6 +18,7 @@ class CategoryForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onComplete(this.state);
+    this.setState(emptyState);
   };
 
   render() {
@@ -28,11 +29,11 @@ class CategoryForm extends React.Component {
         <input
           type='text'
           name='title'
-          placeholder='title'
+          placeholder='tooter'
           value={this.state.title}
           onChange={this.handleChange}
           />
-        <button type='submit'> Create Category </button>
+        <button type='submit'> Create </button>
 
       </form>
     );
