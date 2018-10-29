@@ -9,9 +9,14 @@ export default class ExpenseForm extends React.Component {
     this.state = props.expense || emptyState;
   }
 
-  handleChange = (event) => {
+  handleChangeExpenseName = (event) => {
     const value = event.target.value;
-    this.setState({ content: value});
+    this.setState({ expenseName: value});
+  };
+
+  handleChangeExpenseCost = (event) => {
+    const value = event.target.value;
+    this.setState({ cost: value});
   };
 
   handleSubmit = (event) => {
@@ -35,10 +40,18 @@ export default class ExpenseForm extends React.Component {
       >
         <input
           type='text'
-          name='content'
-          placeholder='hmm'
-          value={this.state.content}
-          onChange={this.handleChange}
+          name='expense-name'
+          placeholder='Expense Name'
+          value={this.state.expenseName}
+          onChange={this.handleChangeExpenseName}
+        />
+        <input
+          type='number'
+          name='expense'
+          placeholder='0.00'
+          step='.01'
+          value={this.state.cost}
+          onChange={this.handleChangeExpenseCost}
         />
         <button type='submit'> {buttonText} </button>
       </form>
