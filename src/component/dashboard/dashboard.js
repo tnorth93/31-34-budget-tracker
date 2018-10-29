@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as categoryActions from '../../action/category-actions';
 import CategoryForm from '../category-form/category-form';
+import Category from '../category/category';
 
 class Dashboard extends React.Component {
   render() {
@@ -10,8 +11,8 @@ class Dashboard extends React.Component {
     return (
       <div>
         <CategoryForm onComplete={this.props.categoryCreate}/>
-        <p> { this.props.categories.map(currentCategory =>
-          <p key={currentCategory.id}>{currentCategory.title}<button name='booty'>booter</button></p>)}</p>
+         { this.props.categories.map((currentCategory, i) => <Category
+           category={currentCategory} key={i}/>)}
       </div>
     );
   }
@@ -24,14 +25,14 @@ Dashboard.propTypes = {
 
 const mapStateToProps = (state) => {
   return {
-    categories: state,
+    categories: state.categories,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     categoryCreate: (category) => {
-      return dispatch(categoryActions.create(category));
+      dispatch(categoryActions.create(category));
     },
   };
 };
