@@ -48,7 +48,7 @@ class CategoryForm extends React.Component {
           value={this.state.budget}
           onChange={this.handleChangeBudget}
           />
-        <button type='submit'> Create </button>
+        <button type='submit'> Create Category </button>
 
       </form>
     );
